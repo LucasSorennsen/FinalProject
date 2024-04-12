@@ -9,122 +9,36 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-
             <Label
-                Text="Welcome to the system"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Start" />
-            <Label
-                Text="Create a Event"
+                Text="Log in"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Start" />
 
             <Entry
-                x:Name="EventName"
-                Text="Name"
-                SemanticProperties.Hint="Counts the number of times you click"
+                x:Name="UserName"
+                Text="User"
                 HorizontalOptions="Start" />
 
             <Entry
-                x:Name="EventDate"
-                Text="Date"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
-
-            <Entry
-                x:Name="EventTime"
-                Text="Time"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
-
-            <Entry
-                x:Name="Location"
-                Text="Location"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
-
-            <Entry
-                x:Name="EventType"
-                Text="Type"
-                SemanticProperties.Hint="Counts the number of times you click"
+                x:Name="Password"
+                Text="Password"
                 HorizontalOptions="Start" />
 
             <Button
-            Text="Confirm Create"
-            HorizontalOptions="Start"
-            />
-
-            <Label
-                Text="Update a Event"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                x:Name="Confirm"
+                Text="Confirm"
+                Clicked="OnConfirm"
                 HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="UpdateName"
-                Text="Name"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="UpdateDate"
-                Text="Date"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="UpdateTime"
-                Text="Time"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="UpdateLocation"
-                Text="Location"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="UpdateType"
-                Text="Type"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Button
-            Text="Confirm Changes"
-            HorizontalOptions="Start"
-            />
 
-            <Label
-                Text="Add Participant"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="ParticipantName"
-                Text="Name"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
 
-            <Entry
-                x:Name="PhoneNumnber"
-                Text="Phone"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
-
-            <Entry
-                x:Name="Role"
-                Text="Role"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Start" />
-
-            <Button
-            Text="Confirm Participant"
-            HorizontalOptions="Start"
-            />
         </VerticalStackLayout>
     </ScrollView>
 
