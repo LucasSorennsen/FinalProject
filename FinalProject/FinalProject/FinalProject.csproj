@@ -57,9 +57,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="SystemClasses\**" />
+	  <Compile Remove="SystemClasses\**" />
+	  <EmbeddedResource Remove="SystemClasses\**" />
+	  <MauiCss Remove="SystemClasses\**" />
+	  <MauiXaml Remove="SystemClasses\**" />
+	  <None Remove="SystemClasses\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Classes\" />
 	</ItemGroup>
 
 </Project>
