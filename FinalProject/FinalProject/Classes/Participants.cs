@@ -10,12 +10,12 @@ namespace FinalProject.Classes
     {
 
         // need participant #, name, email, phone, special needs, type (role)
-        public int parID;
-        public string parName;
-        public string parEmail;
-        public int parPhone;
-        public string parSpec;
-        public string parType;
+        public int parID { get; set; }
+        public string parName { get; set; }
+        public string parEmail { get; set; }
+        public int parPhone { get; set; }
+        public string parSpec { get; set; }
+        public string parType { get; set; }
 
         public Participants(int ID, string name, string email, int phone, string special, string role)
         {
