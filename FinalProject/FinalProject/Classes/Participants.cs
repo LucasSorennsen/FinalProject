@@ -29,12 +29,12 @@ namespace FinalProject.Classes
 
         public override string ToString()
         {
-            return $"\nID:			{parID}" +
-                $"\nName:		{parName}" +
+            return $"\nID:			   {parID}" +
+                $"\nName:		    {parName}" +
                 $"\nEmail Address:	{parEmail}" +
-                $"\nPhone Number:		{parPhone}" +
-                $"\nSpecial Needs:		{parSpec}"+
-                $"\nRole:	{parType}";
+                $"\nPhone Number:	{parPhone}" +
+                $"\nSpecial Needs:	{parSpec}"+
+                $"\nRole:	        {parType}";
         }
     }
 }
