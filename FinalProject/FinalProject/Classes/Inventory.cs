@@ -26,11 +26,11 @@ namespace FinalProject.Classes
 
         public override string ToString()
         {
-            return $"\nProduct ID:			{prodID}" +
+            return $"\nProduct ID:		     {prodID}" +
                 $"\nProduct Name:		{prodName}" +
-                $"\nPrice:	{prodPrice}" +
+                $"\nPrice:	            {prodPrice}" +
                 $"\nCurrent Stock:		{prodStock}" +
-                $"\nTotal Sold:		{prodSold}";
+                $"\nTotal Sold:		    {prodSold}";
         }
     }
 }
