@@ -31,7 +31,11 @@ namespace FinalProject.Classes
 
         public override string ToString()
         {
-            return "Event Owner Profile - ID: " + ownerID + "; Username: " + ownerUsername + "; Password: " + ownerPassword + "; Email: " + ownerEmail + "; Phone#: " + ownerPhone;
+            return $"\nEvent Owner ID:		 {ownerID}" +
+                $"\nUsername:		         {ownerUsername}" +
+                $"\nPassword:	             {ownerPassword}" +
+                $"\nEmail:		             {ownerEmail}" +
+                $"\nPhone Number:		     {ownerPhone}";
         }
     }
 }

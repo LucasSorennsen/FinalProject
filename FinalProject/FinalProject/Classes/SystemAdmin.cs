@@ -25,7 +25,11 @@ namespace FinalProject.Classes
 
         public override string ToString()
         {
-            return "System Admin Profile - ID: " + adminID + "; Username: " + adminUsername + "; Password: " + adminPassword + "; Email: " + adminEmail + "; Phone#: " + adminPhone;
+            return $"\nSystem Admin ID:		  {adminID}" +
+                $"\nUsername:		          {adminUsername}" +
+                $"\nPassword:	              {adminPassword}" +
+                $"\nEmail:		              {adminEmail}" +
+                $"\nPhone Number:		      {adminPhone}";
         }
     }
 }
