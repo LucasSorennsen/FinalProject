@@ -6,7 +6,32 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Classes
 {
-    internal class EventOwner
+    public class EventOwner
     {
+        public int ownerID;
+        public string ownerUsername;
+        public string ownerPassword;
+        public string ownerEmail;
+        public int ownerPhone;
+        public List<int> ownerList = new List<int>();
+
+        public EventOwner(int ID, string username, string password, string email, int phone)
+        {
+            ownerID = ID;
+            ownerUsername = username;
+            ownerPassword = password;
+            ownerEmail = email;
+            ownerPhone = phone;
+        }
+
+        public void AddEvent(int eventID)
+        {
+            ownerList.Add(eventID);
+        }
+
+        public override string ToString()
+        {
+            return "Event Owner Profile - ID: " + ownerID + "; Username: " + ownerUsername + "; Password: " + ownerPassword + "; Email: " + ownerEmail + "; Phone#: " + ownerPhone;
+        }
     }
 }
