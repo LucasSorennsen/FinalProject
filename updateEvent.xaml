@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Update a Event"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="UpdateName"
+                Text="Name"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <DatePicker
+                x:Name="UpdateDate"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <TimePicker
+                x:Name="UpdateTime"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="UpdateLocation"
+                Text="Location"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="UpdateType"
+                Text="Type"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Button
+            Text="Confirm Changes"
+            HorizontalOptions="Start"
+            />
+
+
+            <Button
+                x:Name="Confirm"
+                Text="Confirm"
+                Clicked="OnConfirm"
+                HorizontalOptions="Start" />
+
+
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
