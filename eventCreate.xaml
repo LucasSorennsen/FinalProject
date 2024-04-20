@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Final.NewPage1"
+             x:Class="Final.eventCreater"
              Title="System">
     <ScrollView>
         <VerticalStackLayout
@@ -50,10 +50,16 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Start" />
 
+
             <Button
-                x:Name="Create"
+                x:Name="next"
+                Text="nexts"
+                Clicked="viewEvent">
+            </Button>
+
+            <Button
+                x:Name="CreateEvent "
                 Text="Confirm Create"
-                Clicked="Create_Clicked"
                 HorizontalOptions="Start" />
 
         </VerticalStackLayout>
