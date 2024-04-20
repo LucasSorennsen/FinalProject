@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventManagerProject.HomePage"
+             Title="HomePage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="10"
+            Margin="10">
+            
+            <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
+                <Label
+                    Text="Events Home Page"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Start" />        
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
+                <Button
+                    x:Name="ViewAllEvents"
+                    Text="View All Events"
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Clicked="ViewEvents"
+                    HorizontalOptions="Start" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
+                <Button
+                    x:Name="UpdateEvents"
+                    Text="Update An Existing Event"
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Clicked="UpdateExisting"
+                    HorizontalOptions="Start" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
+                <Button
+                    x:Name="CreateEvents"
+                    Text="Create A New Event"
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Clicked="CreateEventPage"
+                    HorizontalOptions="Start" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
