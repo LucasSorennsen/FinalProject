@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventManagerProject.AddingParticipants"
+             Title="AddingParticipants">
+    <ScrollView>
+    <VerticalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+             Text="Enter Participant ID #"
+             HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+                x:Name = "partpID"
+                Placeholder = "Enter Participant ID #"
+                TextChanged = "OnPartpIDTextChanged"
+                Completed = "OnPartpIDCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+ Text="Enter Participant Name"
+ HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+        x:Name = "partpName"
+        Placeholder = "Enter Participant Name"
+        TextChanged = "OnPartpNameTextChanged"
+        Completed = "OnPartpNameCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+ Text="Enter Participant Email"
+ HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+        x:Name = "partpEmail"
+        Placeholder = "Enter Participant Email"
+        TextChanged = "OnPartpEmailTextChanged"
+        Completed = "OnPartpEmailCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+ Text="Enter Participant Phone #"
+ HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+        x:Name = "partpPhone"
+        Placeholder = "Enter Participant Phone #"
+        TextChanged = "OnPartpPhoneTextChanged"
+        Completed = "OnPartpPhoneCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+ Text="Enter Participant's special needs (N/A if none)"
+ HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+        x:Name = "partpSpec"
+        Placeholder = "Enter Participant's special needs (N/A if none)"
+        TextChanged = "OnPartpSpecTextChanged"
+        Completed = "OnPartpSpecCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Label
+ Text="Enter Participant Role"
+ HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Entry 
+        x:Name = "partpRole"
+        Placeholder = "Enter Participant Role"
+        TextChanged = "OnPartpRoleTextChanged"
+        Completed = "OnPartpRoleCompleted" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Button
+                x:Name="submitparticipant"
+                Text="Submit"
+                FontAttributes="Bold"
+                FontSize="22"
+                Clicked="SubmitParticipants"
+                HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
