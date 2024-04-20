@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.NewPage1"
+             Title="System">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+
+            >
+            <Label
+
+                Text="Welcome to the system"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Start" />
+            <Label
+                Text="Create a Event"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventName"
+                Text="Name"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <DatePicker
+                x:Name="EventDate"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <TimePicker
+                x:Name="EventTime"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="Location"
+                Text="Location"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventType"
+                Text="Type"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Start" />
+
+            <Button
+                x:Name="Create"
+                Text="Confirm Create"
+                Clicked="Create_Clicked"
+                HorizontalOptions="Start" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
