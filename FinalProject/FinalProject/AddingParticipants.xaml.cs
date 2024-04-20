@@ -83,6 +83,6 @@ public partial class AddingParticipants : ContentPage
 
     public void SubmitParticipants(object sender, EventArgs e)
     {
-        submitparticipant.Text = "Submitted";
+        submitparticipant.Text = viewAllParticipants().ToString();
     }
 }
