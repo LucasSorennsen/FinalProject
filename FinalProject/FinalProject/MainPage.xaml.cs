@@ -2,7 +2,8 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        string username_entry;
+        string password_entry;
 
         public MainPage()
         {
@@ -16,10 +17,9 @@
 
         private void OnConfirm(object sender, EventArgs e)
         {
-            if (UserName.Text == "UserName" && Password.Text == "Password")
-            {
-                Navigation.PushAsync(new HomePage());
-            }
+            username_entry = Username.Text;
+            password_entry = Password.Text;
+            Navigation.PushAsync(new HomePage(username_entry, password_entry));
         }
     }
 }

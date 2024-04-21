@@ -72,4 +72,28 @@
 		<PackageReference Include="MySqlConnector" Version="2.3.6" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="CreateEvents.xaml.cs">
+	    <DependentUpon>CreateEvents.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ViewEvents.xaml.cs">
+	    <DependentUpon>ViewEvents.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UpdateEvents.xaml.cs">
+	    <DependentUpon>UpdateEvents.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CreateEvents.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewEvents.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="UpdateEvents.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

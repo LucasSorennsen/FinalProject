@@ -13,23 +13,26 @@
             Text="Log in"
             SemanticProperties.HeadingLevel="Level1"
             FontSize="32"
-            HorizontalOptions="Start" />
+            HorizontalOptions="Center" />
 
             <Entry
-            x:Name="UserName"
-            Text="User"
-            HorizontalOptions="Start" />
+            x:Name="Username"
+            Placeholder="Username"
+            HorizontalOptions="Center"
+            MaxLength="50"/>
 
             <Entry
             x:Name="Password"
-            Text="Password"
-            HorizontalOptions="Start" />
+            Placeholder="Password"
+            IsPassword="True"
+            HorizontalOptions="Center" 
+            MaxLength="50"/>
 
             <Button
             x:Name="Confirm"
             Text="Confirm"
             Clicked="OnConfirm"
-            HorizontalOptions="Start" />
+            HorizontalOptions="Center" />
             
             
             

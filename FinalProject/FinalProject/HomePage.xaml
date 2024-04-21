@@ -7,7 +7,7 @@
         <VerticalStackLayout
             Spacing="10"
             Margin="10">
-            
+
             <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
                 <Label
                     Text="Events Home Page"

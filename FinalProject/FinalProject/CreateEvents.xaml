@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.CreateEvents"
+             Title="CreateEvents">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+
+            >
+            <Label
+
+                Text="Welcome to the system"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Start" />
+            <Label
+                Text="Create a Event"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventName"
+                Placeholder="Name"
+                HorizontalOptions="Start" />
+
+            <DatePicker
+                x:Name="EventDate"
+                HorizontalOptions="Start" />
+
+            <TimePicker
+                x:Name="EventTime"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventDescription"
+                Placeholder="Description"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="Venue"
+                Placeholder="Venue"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventType"
+                Placeholder="Type"
+                HorizontalOptions="Start" />
+
+            <Entry
+                x:Name="EventBudget"
+                Placeholder="Budget"
+                HorizontalOptions="Start" />
+
+            <Button
+                x:Name="CreateEvent "
+                Text="Confirm Create"
+                Clicked="EventCreation"
+                HorizontalOptions="Start"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
