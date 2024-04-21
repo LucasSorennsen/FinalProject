@@ -67,17 +67,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.6, )"
             }
           },
           "imports": [
@@ -110,17 +114,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.6, )"
             }
           },
           "imports": [
@@ -153,17 +161,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.6, )"
             }
           },
           "imports": [
@@ -197,11 +209,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.20, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.6, )"
             }
           },
           "imports": [

@@ -18,7 +18,7 @@
         {
             if (UserName.Text == "UserName" && Password.Text == "Password")
             {
-                Navigation.PushAsync(new NewPage1());
+                Navigation.PushAsync(new HomePage());
             }
         }
     }

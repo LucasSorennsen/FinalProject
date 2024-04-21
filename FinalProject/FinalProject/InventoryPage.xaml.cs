@@ -1,6 +1,6 @@
-using EventManagerProject.Classes;
+using FinalProject.Classes;
 
-namespace EventManagerProject;
+namespace FinalProject;
 
 public partial class InventoryPage : ContentPage
 {

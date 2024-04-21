@@ -12,6 +12,12 @@ build_property.ProjectDir = C:\Users\mkhan\source\repos\FinalProject\FinalProjec
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
+[C:/Users/mkhan/source/repos/FinalProject/FinalProject/FinalProject/AddingParticipants.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FinalProject.AddingParticipants.xaml
+build_metadata.AdditionalFiles.TargetPath = AddingParticipants.xaml
+build_metadata.AdditionalFiles.RelativePath = AddingParticipants.xaml
+
 [C:/Users/mkhan/source/repos/FinalProject/FinalProject/FinalProject/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FinalProject.App.xaml
@@ -23,6 +29,18 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FinalProject.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/mkhan/source/repos/FinalProject/FinalProject/FinalProject/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FinalProject.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = HomePage.xaml
+
+[C:/Users/mkhan/source/repos/FinalProject/FinalProject/FinalProject/InventoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FinalProject.InventoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = InventoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = InventoryPage.xaml
 
 [C:/Users/mkhan/source/repos/FinalProject/FinalProject/FinalProject/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

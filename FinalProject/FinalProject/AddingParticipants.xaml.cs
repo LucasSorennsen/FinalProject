@@ -1,6 +1,6 @@
-using EventManagerProject.Classes;
+using FinalProject.Classes;
 
-namespace EventManagerProject;
+namespace FinalProject;
 
 public partial class AddingParticipants : ContentPage
 {
@@ -83,6 +83,6 @@ public partial class AddingParticipants : ContentPage
 
     public void SubmitParticipants(object sender, EventArgs e)
     {
-        submitparticipant.Text = viewAllParticipants().ToString();
+        //submitparticipant.Text = viewAllParticipants().ToString();
     }
 }

@@ -1,4 +1,4 @@
-namespace EventManagerProject;
+namespace FinalProject;
 
 public partial class HomePage : ContentPage
 {
@@ -9,15 +9,15 @@ public partial class HomePage : ContentPage
 
     private void ViewEvents(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new ViewEvents());
+        //Navigation.PushAsync(new ViewEvents());
     }
     private void CreateEventPage(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new eventCreate());
+        //Navigation.PushAsync(new eventCreate());
     }
 
     private void UpdateExisting(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new updateEvent());
+        //Navigation.PushAsync(new updateEvent());
     }
 }
