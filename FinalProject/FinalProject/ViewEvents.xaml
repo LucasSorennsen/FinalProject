@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.ViewEvents"
              Title="ViewEvents">
+    <Label x:Name="error1"
+Text=""
+TextColor="Red"></Label>
     <ListView x:Name="EventsList"
               SeparatorColor="Silver"
               RowHeight="300">

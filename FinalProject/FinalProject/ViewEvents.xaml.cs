@@ -21,11 +21,17 @@ public partial class ViewEvents : ContentPage
         List<Event> eventsList = new List<Event>();
 
         connection.Open();
-		string sql = "SELECT * FROM systemevents WHERE eventOwner = " + userID;
-		MySqlCommand command = new MySqlCommand(sql, connection);
+        try
+        {
+            string sql = "SELECT * FROM systemevents WHERE eventOwner = " + userID;
+            MySqlCommand command = new MySqlCommand(sql, connection);
 
-		MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-		adapter.Fill(events);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            adapter.Fill(events);
+        } catch (Exception ex)
+        {
+            error1.Text = ex.Message;
+        }
 		connection.Close();
 
 		int i = 0;

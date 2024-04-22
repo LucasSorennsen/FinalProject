@@ -8,6 +8,9 @@
             Text="Update Events"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label x:Name="error1"
+Text=""
+TextColor="Red"></Label>
         <Entry x:Name="eventName"></Entry>
         <Entry x:Name="eventDescription"></Entry>
         <Entry x:Name="eventVenue"></Entry>
@@ -20,5 +23,8 @@
                 Text="Update"
                 Clicked="ConfirmUpdate"
                 HorizontalOptions="Start"></Button>
+        <Label x:Name="error2"
+Text=""
+TextColor="Red"></Label>
     </VerticalStackLayout>
 </ContentPage>

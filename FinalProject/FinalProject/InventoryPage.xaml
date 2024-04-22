@@ -5,6 +5,9 @@
              Title="InventoryPage">
     <ScrollView>
         <VerticalStackLayout>
+            <Label x:Name="error1"
+Text=""
+TextColor="Red"></Label>
             <HorizontalStackLayout Spacing="10" Margin="10">
                 <Label
                 Text="Enter Product ID #"
@@ -76,6 +79,9 @@
                    Clicked="SubmitProductInfo"
                    HorizontalOptions="Start" />
             </HorizontalStackLayout>
+            <Label x:Name="error2"
+Text=""
+TextColor="Red"></Label>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

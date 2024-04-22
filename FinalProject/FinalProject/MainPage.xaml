@@ -34,8 +34,12 @@
             Clicked="OnConfirm"
             HorizontalOptions="Center" />
             
-            
-            
+            <Label x:Name="error1"
+Text=""
+TextColor="Red"></Label>
+
+
+
         </VerticalStackLayout>
     </ScrollView>
 

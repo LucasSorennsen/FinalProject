@@ -17,10 +17,16 @@ public partial class InventoryPage : ContentPage
         builder = sqlConnector;
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
         connection.Open();
-        string sql = "SELECT eventID FROM systemevents WHERE eventName = '" + selectedEventName + "'";
-        MySqlCommand command = new MySqlCommand(sql, connection);
+        try
+        {
+            string sql = "SELECT eventID FROM systemevents WHERE eventName = '" + selectedEventName + "'";
+            MySqlCommand command = new MySqlCommand(sql, connection);
 
-        eventID = (int)command.ExecuteScalar();
+            eventID = (int)command.ExecuteScalar();
+        } catch(Exception ex)
+        {
+            error1.Text = ex.Message;
+        }
 
         connection.Close();
     }
@@ -36,9 +42,15 @@ public partial class InventoryPage : ContentPage
         string prodSold = productSold.Text;
 
         connection.Open();
-        string sql = "INSERT INTO inventory VALUES (" + prodId + ", '" + prodName + "', " + prodPrice + ", " + prodStock + ", " + prodSold + ", " + eventID + ")";
-        MySqlCommand command = new MySqlCommand( sql, connection);
-        command.ExecuteNonQuery();
+        try
+        {
+            string sql = "INSERT INTO inventory VALUES (" + prodId + ", '" + prodName + "', " + prodPrice + ", " + prodStock + ", " + prodSold + ", " + eventID + ")";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.ExecuteNonQuery();
+        } catch(Exception ex)
+        {
+            error2.Text = ex.Message;
+        }
         connection.Close();
     }
 }

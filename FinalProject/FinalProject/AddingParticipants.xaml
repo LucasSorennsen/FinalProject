@@ -5,6 +5,9 @@
              Title="AddingParticipants">
     <ScrollView>
     <VerticalStackLayout>
+            <Label x:Name="error1"
+                   Text=""
+                   TextColor="Red"></Label>
         <HorizontalStackLayout Spacing="10" Margin="10">
             <Label
              Text="Enter Participant ID #"
@@ -67,8 +70,8 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout Spacing="10" Margin="10">
             <Label
- Text="Enter Participant Role"
- HorizontalOptions="Start" />
+                Text="Enter Participant Role"
+                 HorizontalOptions="Start" />
         </HorizontalStackLayout>
         <HorizontalStackLayout Spacing="10" Margin="10">
             <Entry 
@@ -86,6 +89,9 @@
                 Clicked="SubmitParticipants"
                 HorizontalOptions="Start" />
         </HorizontalStackLayout>
+            <Label x:Name="error2"
+                   Text=""
+                   TextColor="Red"></Label>
     </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -19,11 +19,17 @@ public partial class UpdateEvents : ContentPage
 
 		connection.Open();
 
-		string sql = "SELECT * FROM systemevents WHERE eventName = '" + selectedEventName + "'";
-		MySqlCommand command = new MySqlCommand(sql, connection);
+        try
+        {
+            string sql = "SELECT * FROM systemevents WHERE eventName = '" + selectedEventName + "'";
+            MySqlCommand command = new MySqlCommand(sql, connection);
 
-        MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-        adapter.Fill(events);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            adapter.Fill(events);
+        } catch (Exception ex)
+        {
+            error1.Text = ex.Message;
+        }
         connection.Close();
 
         DataRow dr;
@@ -58,13 +64,20 @@ public partial class UpdateEvents : ContentPage
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
         connection.Open();
 
-        string sql = "UPDATE systemevents SET eventName = '" + eventName.Text + "', eventDescription = '" + eventDescription.Text + 
-            "', eventVenue = '" + eventVenue.Text + "', eventType = '" + Type.Text + "', eventDate = '" + eventDate.Date.ToString("d")
-            + "', eventTime = '" + eventTime.Time.ToString() + "', eventBudget = " + eventBudget.Text + ", spentBudget = " + spentBudget.Text
-            + " WHERE eventID = " + eventID;
+        try
+        {
 
-        MySqlCommand command = new MySqlCommand(sql, connection);
-        command.ExecuteNonQuery();
+            string sql = "UPDATE systemevents SET eventName = '" + eventName.Text + "', eventDescription = '" + eventDescription.Text +
+                "', eventVenue = '" + eventVenue.Text + "', eventType = '" + Type.Text + "', eventDate = '" + eventDate.Date.ToString("d")
+                + "', eventTime = '" + eventTime.Time.ToString() + "', eventBudget = " + eventBudget.Text + ", spentBudget = " + spentBudget.Text
+                + " WHERE eventID = " + eventID;
+
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            command.ExecuteNonQuery();
+        } catch (Exception ex)
+        {
+            error2.Text = ex.Message;
+        }
         connection.Close();
     }
 }

@@ -7,6 +7,7 @@ public partial class CreateEvents : ContentPage
 {
 	public int userID;
     public MySqlConnectionStringBuilder builder { get; set; }
+	public int eventID;
 
     public CreateEvents(int ID, MySqlConnectionStringBuilder sqlConncector)
 	{
@@ -14,18 +15,26 @@ public partial class CreateEvents : ContentPage
 		userID = ID;
 		builder = sqlConncector;
 		EventDate.Date = DateTime.Now;
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+
+        try
+        {
+            string sql = "SELECT MAX(eventID) FROM systemevents";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+
+            eventID = (int)command.ExecuteScalar() + 1;
+        }
+        catch (Exception ex)
+        {
+            error1.Text = ex.Message;
+        }
+        connection.Close();
     }
 
 	public void EventCreation(object sender, EventArgs e)
 	{
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
-        connection.Open();
-
-		string sql = "SELECT MAX(eventID) FROM systemevents";
-		MySqlCommand command = new MySqlCommand(sql, connection);
-
-		int eventID = (int)command.ExecuteScalar() + 1;
-		connection.Close();
 
 		string eventName = EventName.Text;
 		string eventDescription = EventDescription.Text;
@@ -38,11 +47,17 @@ public partial class CreateEvents : ContentPage
 		string eventType = EventType.Text;
         
 		connection.Open();
-		sql = "INSERT INTO systemevents VALUES (" + eventID + ", '" + eventName + "', '" + eventVenue + "', '" + eventDescription + "', '" + eventDate + 
-			"', '" + eventTime + "', " + eventBudget + ", " + 0 + ", 'Future', '" + eventType + "', " + userID + ")";
-		command = new MySqlCommand(sql, connection);
+		try
+		{
+			string sql = "INSERT INTO systemevents VALUES (" + eventID + ", '" + eventName + "', '" + eventVenue + "', '" + eventDescription + "', '" + eventDate +
+				"', '" + eventTime + "', " + eventBudget + ", " + 0 + ", 'Future', '" + eventType + "', " + userID + ")";
+			MySqlCommand command = new MySqlCommand(sql, connection);
 
-		command.ExecuteNonQuery();
+			command.ExecuteNonQuery();
+		} catch (Exception ex)
+		{
+			error2.Text = ex.Message;
+		}
 
 		connection.Close();
 
