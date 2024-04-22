@@ -1,91 +1,44 @@
 using FinalProject.Classes;
+using MySqlConnector;
 
 namespace FinalProject;
 
 public partial class InventoryPage : ContentPage
 {
-    public InventoryPage()
-    {
-        InitializeComponent();
-    }
+    public string selectedEventName;
+    public int eventID;
+    public MySqlConnectionStringBuilder builder { get; set; }
     private List<Inventory> _allProducts = new List<Inventory>();
 
-    public string viewAllProducts()
+    public InventoryPage(string Name, MySqlConnectionStringBuilder sqlConnector)
     {
-        var allProducts = new System.Text.StringBuilder();
+        InitializeComponent();
+        selectedEventName = Name;
+        builder = sqlConnector;
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+        string sql = "SELECT eventID FROM systemevents WHERE eventName = '" + selectedEventName + "'";
+        MySqlCommand command = new MySqlCommand(sql, connection);
 
-        allProducts.AppendLine("ID\t\tName\tPrice\tStock\tSold");
-        foreach (var item in _allProducts)
-        {
-            allProducts.AppendLine($"{item.prodID}\t{item.prodName}\t{item.prodPrice}\t{item.prodStock}\t{item.prodSold}");
-        }
+        eventID = (int)command.ExecuteScalar();
 
-        return allProducts.ToString();
-    }
-
-    void OnProductIDTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = productID.Text;
-    }
-    void OnProductIDCompleted(object sender, EventArgs e)
-    {
-        int id = Int32.Parse(((Entry)sender).Text);
-    }
-
-    void OnProductNameTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = productName.Text;
-    }
-    void OnProductNameCompleted(object sender, EventArgs e)
-    {
-        string name = ((Entry)sender).Text;
-    }
-    void OnProductPriceTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = productPrice.Text;
-    }
-    void OnProductPriceCompleted(object sender, EventArgs e)
-    {
-        int price = Int32.Parse(((Entry)sender).Text);
-    }
-
-    void OnProductStockTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = productStock.Text;
-    }
-    void OnProductStockCompleted(object sender, EventArgs e)
-    {
-        int stock = Int32.Parse(((Entry)sender).Text);
-    }
-
-    void OnProductSoldTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = productSold.Text;
-    }
-    void OnProductSoldCompleted(object sender, EventArgs e)
-    {
-        int sold = Int32.Parse(((Entry)sender).Text);
-    }
-
-    public void AddProducts(int id, string name, int price, int stock, int sold)
-    {
-
-        var product = new Inventory(id, name, price, stock, sold);
-        _allProducts.Add(product);
+        connection.Close();
     }
 
     public void SubmitProductInfo(object sender, EventArgs e)
     {
-        submitproduct.Text = viewAllProducts().ToString();
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+
+        string prodId = productID.Text;
+        string prodName = productName.Text;
+        string prodPrice = productPrice.Text;
+        string prodStock = productStock.Text;
+        string prodSold = productSold.Text;
+
+        connection.Open();
+        string sql = "INSERT INTO inventory VALUES (" + prodId + ", '" + prodName + "', " + prodPrice + ", " + prodStock + ", " + prodSold + ", " + eventID + ")";
+        MySqlCommand command = new MySqlCommand( sql, connection);
+        command.ExecuteNonQuery();
+        connection.Close();
     }
 }

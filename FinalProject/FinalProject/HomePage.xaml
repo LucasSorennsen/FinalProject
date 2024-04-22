@@ -26,15 +26,6 @@
             </HorizontalStackLayout>
             <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
                 <Button
-                    x:Name="UpdateEvents"
-                    Text="Update An Existing Event"
-                    FontAttributes="Bold"
-                    FontSize="22"
-                    Clicked="UpdateExisting"
-                    HorizontalOptions="Start" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="10" Margin="10" HorizontalOptions="Center">
-                <Button
                     x:Name="CreateEvents"
                     Text="Create A New Event"
                     FontAttributes="Bold"

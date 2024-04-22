@@ -8,5 +8,17 @@
             Text="Update Events"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Entry x:Name="eventName"></Entry>
+        <Entry x:Name="eventDescription"></Entry>
+        <Entry x:Name="eventVenue"></Entry>
+        <Entry x:Name="Type"></Entry>
+        <DatePicker x:Name="eventDate"></DatePicker>
+        <TimePicker x:Name="eventTime"></TimePicker>
+        <Entry x:Name="eventBudget"></Entry>
+        <Entry x:Name="spentBudget"></Entry>
+        <Button x:Name="Update"
+                Text="Update"
+                Clicked="ConfirmUpdate"
+                HorizontalOptions="Start"></Button>
     </VerticalStackLayout>
 </ContentPage>

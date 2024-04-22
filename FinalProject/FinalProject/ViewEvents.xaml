@@ -3,10 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.ViewEvents"
              Title="ViewEvents">
-    <ListView x:Name="EventsList">
+    <ListView x:Name="EventsList"
+              SeparatorColor="Silver"
+              RowHeight="300">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Name}"></TextCell>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="Header"></Label>
+                        <Label Text="{Binding Description}"
+                               FontSize="Body"></Label>
+                        <Label Text="{Binding Venue}"
+                               FontSize="Body"></Label>
+                        <Label Text="{Binding EventType}"
+                               FontSize="Body"></Label>
+                        <Label x:Name="eventStatus"
+                               Text="{Binding EventStatus}"
+                               FontSize="Caption"></Label>
+                        <Label Text="{Binding EventDate, StringFormat='{0:d}'}"
+                               FontSize="Caption"></Label>
+                        <Button x:Name="Edit"
+                                Text="Edit"
+                                Clicked="EventEdit"
+                                HorizontalOptions="End"></Button>
+                        <Button x:Name="Inventory"
+                                Text="Manage Event Inventory"
+                                Clicked="ToInventory"
+                                HorizontalOptions="End"></Button>
+                        <Button x:Name="Participants"
+                                Text="Manage Event Participants"
+                                Clicked="ToParticipants"
+                                HorizontalOptions="End"></Button>
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

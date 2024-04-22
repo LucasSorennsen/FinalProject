@@ -2,6 +2,7 @@ using System.Globalization;
 using MySqlConnector;
 using FinalProject.Classes;
 using System.Data;
+using Microsoft.Extensions.Logging;
 
 namespace FinalProject;
 
@@ -26,27 +27,49 @@ public partial class ViewEvents : ContentPage
 		MySqlDataAdapter adapter = new MySqlDataAdapter(command);
 		adapter.Fill(events);
 		connection.Close();
-		
+
 		int i = 0;
 		DataRow dr;
-		Event event1 = new Event();
-		while (i < events.Rows.Count)
-		{
-			dr = events.Rows[i];
-			event1.Id = Convert.ToInt32(dr["eventID"]);
-			event1.Name = dr["eventName"] + "";
-			event1.eventDate = DateTime.Parse(Convert.ToString(dr["eventDate"]));
-			event1.Time = TimeSpan.Parse(Convert.ToString(dr["eventTime"]));
-			event1.Description = dr["eventDescription"] + "";
-			event1.EventStatus = event1.UpdateStatus();
-			event1.EventBudget = Convert.ToInt32(dr["eventBudget"]);
-			event1.SpentBudget = Convert.ToInt32(dr["spentBudget"]);
-			event1.EventType = dr["eventType"] + "";
-			eventsList.Add(event1);
-			i++;
-		}
+        while (i < events.Rows.Count)
+        {
+            dr = events.Rows[i];
+            eventsList.Add(new Event
+            {
+                Id = Convert.ToInt32(dr["eventID"]),
+                Name = dr["eventName"] + "",
+                eventDate = DateTime.Parse(Convert.ToString(dr["eventDate"])),
+                Time = TimeSpan.Parse(Convert.ToString(dr["eventTime"])),
+                Description = dr["eventDescription"] + "",
+                EventStatus = dr["eventStatus"] + "",
+                EventBudget = Convert.ToInt32(dr["eventBudget"]),
+                SpentBudget = Convert.ToInt32(dr["spentBudget"]),
+                EventType = dr["eventType"] + "",
+                Venue = dr["eventVenue"] + ""
+            });
+            eventsList[i].UpdateStatus();
+            i++;
+        }
 
-		EventsList.ItemsSource = eventsList;
+        EventsList.ItemsSource = eventsList;
 
+    }
+
+    public void EventEdit(object sender, EventArgs e)
+    {
+        Button btn = (Button)sender;
+        Event selectedEvent = (Event)btn.BindingContext;
+        Navigation.PushAsync(new UpdateEvents(selectedEvent.Name, builder));
+    }
+
+    public void ToInventory(object sender, EventArgs e)
+    {
+        Button btn = (Button)sender;
+        Event selectedEvent = (Event)btn.BindingContext;
+        Navigation.PushAsync(new InventoryPage(selectedEvent.Name, builder));
+    }
+
+    public void ToParticipants(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AddingParticipants());
     }
 }

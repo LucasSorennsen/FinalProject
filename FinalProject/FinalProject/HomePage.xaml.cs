@@ -41,9 +41,4 @@ public partial class HomePage : ContentPage
     {
         Navigation.PushAsync(new CreateEvents(userID, builder));
     }
-
-    private void UpdateExisting(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new UpdateEvents());
-    }
 }
