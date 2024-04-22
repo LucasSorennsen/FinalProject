@@ -70,6 +70,8 @@ public partial class ViewEvents : ContentPage
 
     public void ToParticipants(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AddingParticipants());
+        Button btn = (Button)sender;
+        Event selectedEvent = (Event)btn.BindingContext;
+        Navigation.PushAsync(new AddingParticipants(selectedEvent.Name, builder));
     }
 }

@@ -1,88 +1,44 @@
 using FinalProject.Classes;
+using MySqlConnector;
 
 namespace FinalProject;
 
 public partial class AddingParticipants : ContentPage
 {
-	public AddingParticipants()
+    public string selectedEventName;
+    public int eventID;
+    public MySqlConnectionStringBuilder builder { get; set; }
+    private List<Participants> _allParticipants = new List<Participants>();
+    public AddingParticipants(string Name, MySqlConnectionStringBuilder sqlConnector)
 	{
 		InitializeComponent();
-	}
-    private List<Participants> _allParticipants = new List<Participants>();
+        selectedEventName = Name;
+        builder = sqlConnector;
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+        string sql = "SELECT eventID FROM systemevents WHERE eventName = '" + selectedEventName + "'";
+        MySqlCommand command = new MySqlCommand(sql, connection);
 
-    void OnPartpIDTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = partpID.Text;
-    }
-    void OnPartpIDCompleted(object sender, EventArgs e)
-    {
-        int id = Int32.Parse(((Entry)sender).Text);
-    }
+        eventID = (int)command.ExecuteScalar();
 
-    void OnPartpNameTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = partpName.Text;
-    }
-    void OnPartpNameCompleted(object sender, EventArgs e)
-    {
-        string name = ((Entry)sender).Text;
-    }
-    void OnPartpEmailTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = partpEmail.Text;
-    }
-    void OnPartpEmailCompleted(object sender, EventArgs e)
-    {
-        string emailaddress = ((Entry)sender).Text;
-    }
-
-    void OnPartpPhoneTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = partpPhone.Text;
-    }
-    void OnPartpPhoneCompleted(object sender, EventArgs e)
-    {
-        int phone = Int32.Parse(((Entry)sender).Text);
-    }
-
-    void OnPartpSpecTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string oldText = e.OldTextValue;
-            string newText = e.NewTextValue;
-            string myText = partpSpec.Text;
-        }
-        void OnPartpSpecCompleted(object sender, EventArgs e)
-        {
-            string special = ((Entry)sender).Text;
-        }
-    void OnPartpRoleTextChanged(object sender, TextChangedEventArgs e)
-    {
-        string oldText = e.OldTextValue;
-        string newText = e.NewTextValue;
-        string myText = partpRole.Text;
-    }
-    void OnPartpRoleCompleted(object sender, EventArgs e)
-    {
-        string role = ((Entry)sender).Text;
-    }
-    
-    public void AddParticipant(int id, string name, string emailaddress, int phone, string special, string role)
-    {
-
-        var participant = new Participants(id, name, emailaddress, phone, special, role);
-        _allParticipants.Add(participant);
+        connection.Close();
     }
 
     public void SubmitParticipants(object sender, EventArgs e)
     {
-        //submitparticipant.Text = viewAllParticipants().ToString();
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+
+        string parId = partpID.Text;
+        string parName = partpName.Text;
+        string parEmail = partpEmail.Text;
+        string parPhone = partpPhone.Text;
+        string parSpec = partpSpec.Text;
+        string parType = partpRole.Text;
+
+        connection.Open();
+        string sql = "INSERT INTO participants VALUES (" + parId + ", '" + parName + "', '" + parEmail + "', " + parPhone + ", '" + parSpec + "', '" + parType + "')";
+        MySqlCommand command = new MySqlCommand(sql, connection);
+        command.ExecuteNonQuery();
+        connection.Close();
     }
 }
